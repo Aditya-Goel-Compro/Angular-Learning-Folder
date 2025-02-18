@@ -1,15 +1,19 @@
+
+
 import { Component, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-
+import { HeaderComponent } from '../header/header.component';
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   imports: [FormsModule, RouterLink, RouterOutlet, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'], // Fixed styleUrls
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class AppComponent {
+
+
+export class HomeComponent {
+
   heading = 'new-Angular-Project';
   x: number = 0;
   name: string = ''; // Removed unnecessary space

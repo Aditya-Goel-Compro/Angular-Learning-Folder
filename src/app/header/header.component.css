@@ -1,0 +1,27 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Dark background */
+    display: flex;
+    justify-content: center; /* Center the links */
+}
+
+li {
+    display: flex;
+    gap: 20px; /* Space between links */
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+    border-radius: 5px;
+}
