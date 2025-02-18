@@ -1,6 +1,5 @@
 <p style="font-size: 10rem;">leaning works!</p>
 
-
 <h1>Counter APP</h1>
 <br>
 
@@ -10,7 +9,6 @@
 <button (click)="singleFnc('inc')">+</button>
 <button (click)="singleFnc('dec')">-</button>
 <button (click)="singleFnc('reset')">Reset</button>
-
 
 <hr>
 
@@ -38,13 +36,11 @@ User email: {{ emailFrontend }}
 <button (click)="toggleDiv()">Toggle Div</button>
 
 @if (showDiv) {
-<div
-    style="background-color: yellow; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
+<div style="background-color: yellow; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
     <p>Hide and show div</p>
 </div>
 } @else {
-<div
-    style="background-color: gold; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
+<div style="background-color: gold; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
     <p>Click button as div is hidden</p>
 </div>
 }
@@ -56,49 +52,35 @@ User email: {{ emailFrontend }}
 <p>{{ x }}</p>
 }
 
-
-
-
 <hr>
 <h1>basic of signals</h1>
 <p>valueof signmal --- [ {{signalVar()}} ] </p>
 <button (click)="signalFnc('inc')">+</button>
 <button (click)="signalFnc('dec')">-</button>
 
-
 <hr>
-
 
 <h1>use of contextual vaublkes $index</h1>
 
 @for(x of ArrayNames ; track x ; let i = $index){
 @if($last || $first){
 <p style="background-color: red;">user index : {{ i }} - user name : {{ x }}</p>
-
 }@else {
-
 <p>user index : {{ i }} - user name : {{ x }}</p>
 }
 }
-
-
 
 <hr>
 <h1>2 way binding (if one changes other changes instantly)</h1>
 <input type="text" [(ngModel)]="twoWayBinding" />
 <p>this is 2 way binding :--- {{ twoWayBinding }}</p>
 
-
-
-
-
 <hr>
 <h1>todo list</h1>
 
-<input [(ngModel)]="taskItem" ng type="text" placeholder="enter your task">
+<input [(ngModel)]="taskItem" type="text" placeholder="enter your task">
 <button (click)="addTask()">Add task</button>
 
-<!-- <p>{{taskItem}}</p> -->
 @if(TaskArr.length == 0){
 <p>No task available</p>
 }
@@ -109,7 +91,6 @@ User email: {{ emailFrontend }}
 </ul>
 }
 }
-
 
 <hr>
 

@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { Error404Component } from './error404/error404.component';
 import { HomeComponent } from './home/home.component';
 import { LearningComponent } from './learning/learning.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
     {path:"" , component: HomeComponent},
@@ -12,6 +14,8 @@ export const routes: Routes = [
     {path:"login" , component: LoginComponent},
     {path:"contact" , component: ContactComponent},
     {path:"learning" , component: LearningComponent},
+    {path:"profile" , component: ProfileComponent},
+    {path:"userPage/:id" , component: UserComponent},
     {path:"**" , component: Error404Component},
 
 ];
