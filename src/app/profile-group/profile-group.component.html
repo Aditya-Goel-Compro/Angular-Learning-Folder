@@ -1,0 +1,14 @@
+<p style="font-size: 10rem;">profile-group works!</p>
+
+
+
+<h1>form handling with form gropu module</h1>
+
+
+<form [formGroup]="profileForm" ngsubmit="onSubmit()">
+
+    <input type="text" placeholder="name" formControlName="name">
+    <input type="text" placeholder="email" formControlName="email">
+    <input type="text" placeholder="age" formControlName="password">
+    <button type="submit" (click)="consoleFormData()">Login</button>
+</form>
