@@ -8,6 +8,7 @@ import { LearningComponent } from './learning/learning.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { ProfileGroupComponent } from './profile-group/profile-group.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 export const routes: Routes = [
     {path:"" , component: HomeComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path:"contact" , component: ContactComponent},
     {path:"learning" , component: LearningComponent},
     {path:"form" , component: ProfileGroupComponent},
+    {path:"template-form" , component: TemplateFormComponent},
     {path:"profile" , component: ProfileComponent},
     {path:"userPage/:id" , component: UserComponent},
     {path:"**" , component: Error404Component},
