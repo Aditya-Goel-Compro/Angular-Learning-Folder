@@ -7,7 +7,17 @@
 </nav>
 
 
-<app-child2 x="1"></app-child2>
+<app-child2 [username]="username"></app-child2>
+
+
+
+
+
+<select #selectedUserName  (click)="onUserChange(selectedUserName.value)" name="" id="">
+    <option value="abc">abc</option>
+    <option value="pqr">pqr</option>
+    <option value="xyz">xyz</option>
+</select>
 </div>
 
 <router-outlet/>

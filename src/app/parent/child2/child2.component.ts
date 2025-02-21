@@ -7,6 +7,6 @@ import { Component  ,Input } from '@angular/core';
   styleUrl: './child2.component.css'
 })
 export class Child2Component {
-  @Input() x: string="";
+  @Input() username: string="";
 
 }

@@ -9,6 +9,12 @@ import { Child2Component } from "./child2/child2.component";
   styleUrl: './parent.component.css'
 })
 export class ParentComponent {
+username = "x"
+
+
+onUserChange(user:string){
+  this.username = user ; 
+}
 
 }
 
