@@ -8,5 +8,6 @@ import { Component  ,Input } from '@angular/core';
 })
 export class Child2Component {
   @Input() username: string="";
+  @Input() x: string = "";
 
 }
