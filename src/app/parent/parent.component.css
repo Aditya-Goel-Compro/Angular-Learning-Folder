@@ -1,0 +1,17 @@
+div{
+    border: 2px solid red;
+    padding: 1rem;
+    margin: 1rem;
+    width: 50%;
+}
+
+button{
+    margin: 1rem;
+    background-color: black;
+    border-radius: 3rem;
+}
+
+a{
+    color: white;
+
+}
