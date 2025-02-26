@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './child1.component.css'
 })
 export class Child1Component {
+  @Input() data: string = "";
 }
