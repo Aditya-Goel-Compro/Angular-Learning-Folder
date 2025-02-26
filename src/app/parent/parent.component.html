@@ -20,4 +20,12 @@
 </select>
 </div>
 
+
+
+
+<h1>Resuse of the component</h1>
+
+@for(x of arr  ; track x){
+    <app-child1 [data] = "x" ></app-child1>
+}
 <router-outlet/>
