@@ -1,0 +1,38 @@
+
+<div class="div">
+    <div class="div">
+        
+        in this if I want to send data from this page to profile page
+        <div class="div">
+            page to page data transfer
+        </div>
+
+    </div>
+    <div class="div">
+
+        <a routerLink="/profile">Go to profile page </a>
+    </div>
+    <div class="div">
+
+        <a [routerLink]="['/profile' , {data : 'aditya'}]">Go to profile page with data as "name"</a>
+
+    </div>
+    <div class="div">
+        <button (click)="goToProfilePageBest()">Go to profile page for best practice</button>
+    </div>
+
+    <div class="div">
+        <a routerLink="/profile">got to profile page and have a default data from router.ts</a>
+    </div>
+</div>
+
+
+
+<div class="div">
+
+<h1>dynamic routing as click on name to open userPage</h1>
+@for(x of users ; track x.id){
+            <p> <a routerLink="userPage/{{x.id}}">{{ x.name }}</a> </p>
+}
+
+</div>

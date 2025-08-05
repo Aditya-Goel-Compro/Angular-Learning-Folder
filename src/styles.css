@@ -1,3 +1,27 @@
-button{
-    border: 10px solid black;
+.heading {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+
+.content-padding{
+    border: 2px solid red;
+    padding: 2rem;
+}
+
+
+.flex-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.div{
+  border: 2px solid red;
+  padding: 1rem;
+  margin: 1rem;
 }

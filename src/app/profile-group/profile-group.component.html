@@ -1,26 +1,51 @@
-<p style="font-size: 5rem;">Profile Group Works!</p>
+<div class="content-padding">
+  <p class="heading">Profile Group Page!</p>
 
-<h1>Form Handling with Form Group Module</h1>
+  <p>Form Handling with Form Group Module</p>
 
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    
-    <input type="text" placeholder="Name" formControlName="name">
-    <span *ngIf="profileForm.get('name')?.hasError('required')">* Name is required</span>
-    <span *ngIf="profileForm.get('name')?.invalid && (profileForm.get('name')?.dirty || profileForm.get('name')?.touched)">* Check if there is an error</span>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Name" formControlName="name" />
+    <span *ngIf="profileForm.get('name')?.hasError('required')"
+      >* Name is required</span
+    >
+    <span
+      *ngIf="
+        profileForm.get('name')?.invalid &&
+        (profileForm.get('name')?.dirty || profileForm.get('name')?.touched)
+      "
+      >* Check if there is an error</span
+    >
 
-    <input type="email" placeholder="Email" formControlName="email">
-    <span *ngIf="profileForm.get('email')?.hasError('required')">* Email is required</span>
-    <span *ngIf="profileForm.get('email')?.invalid && (profileForm.get('email')?.dirty || profileForm.get('email')?.touched)">* Check if there is an error</span>
+    <input type="email" placeholder="Email" formControlName="email" />
+    <span *ngIf="profileForm.get('email')?.hasError('required')"
+      >* Email is required</span
+    >
+    <span
+      *ngIf="
+        profileForm.get('email')?.invalid &&
+        (profileForm.get('email')?.dirty || profileForm.get('email')?.touched)
+      "
+      >* Check if there is an error</span
+    >
 
-    <input type="password" placeholder="Password" formControlName="password">
-    <span *ngIf="profileForm.get('password')?.hasError('required')">* Password is required</span>
-    <span *ngIf="profileForm.get('password')?.invalid && (profileForm.get('password')?.dirty || profileForm.get('password')?.touched)">* Check if there is an error</span>
+    <input type="password" placeholder="Password" formControlName="password" />
+    <span *ngIf="profileForm.get('password')?.hasError('required')"
+      >* Password is required</span
+    >
+    <span
+      *ngIf="
+        profileForm.get('password')?.invalid &&
+        (profileForm.get('password')?.dirty ||
+          profileForm.get('password')?.touched)
+      "
+      >* Check if there is an error</span
+    >
 
     <button type="submit">Login</button>
-</form>
+  </form>
 
-<hr>
-<h1>Submitted Form Data</h1>
-<p>Name: {{ profileForm.value.name }}</p>
-<p>Email: {{ profileForm.value.email }}</p>
-<p>Password: {{ profileForm.value.password }}</p>
+  <h1>Submitted Form Data</h1>
+  <p>Name: {{ profileForm.value.name }}</p>
+  <p>Email: {{ profileForm.value.email }}</p>
+  <p>Password: {{ profileForm.value.password }}</p>
+</div>

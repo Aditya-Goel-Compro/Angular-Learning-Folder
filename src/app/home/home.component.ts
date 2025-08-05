@@ -15,14 +15,7 @@ import { FormControl } from '@angular/forms';
 
 
 export class HomeComponent {
-  users: { name: string; age: number; email: string; id: number }[] = [
-    { name: "Alice Johnson", age: 28, email: "alice@example.com", id: 1 },
-    { name: "Bob Smith", age: 32, email: "bob@example.com", id: 2 },
-    { name: "Charlie Brown", age: 24, email: "charlie@example.com", id: 3 },
-    { name: "David Williams", age: 30, email: "david@example.com", id: 4 },
-    { name: "Emma Davis", age: 27, email: "emma@example.com", id: 5 },
-  ];
-
+  
 
   // form control reactive form
   password  = new FormControl();

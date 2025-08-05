@@ -1,104 +1,161 @@
-<p style="font-size: 10rem;">leaning works!</p>
+<div class="content-padding">
+  <p class="heading">leaning Page!</p>
 
-<h1>Counter APP</h1>
-<br>
+  <div class="div">
+    <h1>this is the array of json object data </h1>
+    @for(i of arr2 ; track i.id){
+    <p>{{ i.id }} - {{ i.name }}</p>
+    }
+  </div>
 
-<h1>{{ x }}</h1>
-<br>
+  <div class="div counter-app">
+    <h1 class="m-12 border-8 border-red-500 ">Counter APP</h1>
+    <p>{{ x }}</p>
 
-<button (click)="singleFnc('inc')">+</button>
-<button (click)="singleFnc('dec')">-</button>
-<button (click)="singleFnc('reset')">Reset</button>
+    <div class="flex-item">
+      <button (click)="singleFnc('inc')">+</button>
+      <button (click)="singleFnc('dec')">-</button>
+      <button (click)="singleFnc('reset')">Reset</button>
+    </div>
+  </div>
 
-<hr>
+  <div class="div">
+    <p>Name in input is: {{ displayName }}</p>
 
-<br>
-<p>Name in input is: {{ displayName }}</p>
-<br>
+    <input (input)="handleInput($event)" type="text" id="inputTag" placeholder="Enter your name" />
+    <button (click)="showName()">Show Name</button>
+  </div>
+  <div class="div">
+    <h1>Input System (Easy Way of Using #id)</h1>
 
-<input (input)="handleInput($event)" type="text" id="inputTag" placeholder="Enter your name">
-<button (click)="showName()">Show Name</button>
+    User email: {{ emailFrontend }}
+    <input type="text" #emailElement placeholder="Enter your email" />
+    <button (click)="getEmail(emailElement.value)">Get email in console</button>
+    <button (click)="setEmail()">Set email on top</button>
+  </div>
+  <div class="div">
+    <h1>if else</h1>
+    <button (click)="toggleDiv()">Toggle Div</button>
 
-<hr>
+    @if (showDiv) {
+    <div style="
+        background-color: yellow;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 10px;
+        height: 100px;
+        width: 100px;
+      ">
+      <p>Hide and show div</p>
+    </div>
+    } @else {
+    <div style="
+        background-color: gold;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 10px;
+        height: 100px;
+        width: 100px;
+      ">
+      <p>Click button as div is hidden</p>
+    </div>
+    }
+  </div>
+  <div class="div">
+    <h1>Array data</h1>
 
-<h1>Input System (Easy Way of Using #id)</h1>
-<br>
+    @for(x of arr ; track x){
+    <p>{{ x }}</p>
+    }
+  </div>
+  <div class="div">
+    <h1>basic of signals</h1>
+    <p>signal is basically a WARPPER AROUNF A VALEU , WHUCH GIVE MSG WHEN VALUE CHANGES</p>
+    <p>valueof signmal --- [ {{ signalVar() }} ]</p>
+    <button (click)="signalFnc('inc')">+</button>
+    <button (click)="signalFnc('dec')">-</button>
 
-User email: {{ emailFrontend }}
-<br>
-<input type="text" #emailElement placeholder="Enter your email">
-<button (click)="getEmail(emailElement.value)">Get email in console</button>
-<button (click)="setEmail()">Set email on top</button>
 
-<hr>
+    <h1>For computed Signals</h1>
+    <p>in this if i want that on aspot chane of any value of the value of c changes in whiole app as it normall made varibelonce a varivle depenct chaneg the vale of c will not c age</p>
+    a={{this.a()}}
+    b={{this.b()}}
+    c={{this.c()}}
 
-<h1>if else </h1>
-<button (click)="toggleDiv()">Toggle Div</button>
+    <button type="button" (click)="showComputedSignals()">Click me (check console)</button>
+  </div>
+  <div class="div">
+    <h1>use of contextual vaublkes $index</h1>
 
-@if (showDiv) {
-<div style="background-color: yellow; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
-    <p>Hide and show div</p>
+    @for(x of ArrayNames ; track x ; let i = $index){ @if($last || $first){
+    <p style="background-color: red">
+      user index : {{ i }} - user name : {{ x }}
+    </p>
+    }@else {
+    <p>user index : {{ i }} - user name : {{ x }}</p>
+    } }
+    @empty {
+      <h1>no record found</h1>
+    }
+  </div>
+  <div class="div">
+    <h1>2 way binding (if one changes other changes instantly)</h1>
+    <input type="text" [(ngModel)]="twoWayBinding" />
+    <p>this is 2 way binding :--- {{ twoWayBinding }}</p>
+  </div>
+  <div class="div">
+    <h1>todo list</h1>
+
+    <input [(ngModel)]="taskItem" type="text" placeholder="enter your task" />
+    <button (click)="addTask()">Add task</button>
+    @if(TaskArr.length == 0){
+    <p>No task available</p>
+    } @else{ @for (x of TaskArr; track x) {
+    <ul>
+      <li>
+        {{ x.task }} ----------
+        <button (click)="deleteTask(x.id)"><i class="fa-solid fa-trash"></i></button>
+      </li>
+    </ul>
+    } }
+  </div>
+
+  <div class="div">
+    hi this is the app.html file - {{ myname }}
+    <input type="text" placeholder="myname" (input)="abc($event)" />
+    <button type="button" (click)="clickMe()">Click me to show name</button>
+    <p>name : - {{ nameFromInput }}</p>
+  </div>
+
+  <div class="div">
+    <h1>dynamic styling </h1>
+    <h1 style="background-color: red;">this is sample 
+      line having fix color red</h1>
+      <h1 [style.backgroundColor] = "bgColor" >
+        this is line has dynamic color on btn fnc
+      </h1>
+      <button (click)="changeColor()">Change color </button>
+  </div>
+
+<div class="div">
+  <h1>here below starts the
+    <div class="div">
+      directives
+    </div>
+  </h1>
 </div>
-} @else {
-<div style="background-color: gold; border: 1px solid black; padding: 10px; margin-top: 10px; height: 100px; width: 100px;">
-    <p>Click button as div is hidden</p>
+  <div class="div">
+    <h1 *ngIf = "showText">this text get toggle using ngIF</h1>
+    <button (click) = "toggleText()">Click me </button>
+  </div>
+
+  <div class="div">
+    <h1>this is using ngfor</h1>
+    <ul>
+      <li *ngFor="let x of sampleArray">
+        {{x.id}} -> {{x.name}} -> {{x.age}}
+
+      </li>
+    </ul>
+  </div>
 </div>
-}
-
-<hr>
-<h1>Array data</h1>
-
-@for(x of arr ; track x){
-<p>{{ x }}</p>
-}
-
-<hr>
-<h1>basic of signals</h1>
-<p>valueof signmal --- [ {{signalVar()}} ] </p>
-<button (click)="signalFnc('inc')">+</button>
-<button (click)="signalFnc('dec')">-</button>
-
-<hr>
-
-<h1>use of contextual vaublkes $index</h1>
-
-@for(x of ArrayNames ; track x ; let i = $index){
-@if($last || $first){
-<p style="background-color: red;">user index : {{ i }} - user name : {{ x }}</p>
-}@else {
-<p>user index : {{ i }} - user name : {{ x }}</p>
-}
-}
-
-<hr>
-<h1>2 way binding (if one changes other changes instantly)</h1>
-<input type="text" [(ngModel)]="twoWayBinding" />
-<p>this is 2 way binding :--- {{ twoWayBinding }}</p>
-
-<hr>
-<h1>todo list</h1>
-
-<input [(ngModel)]="taskItem" type="text" placeholder="enter your task">
-<button (click)="addTask()">Add task</button>
-
-@if(TaskArr.length == 0){
-<p>No task available</p>
-}
-@else{
-@for (x of TaskArr; track x) {
-<ul>
-    <li>{{x.task}} ---------- <button (click)="deleteTask(x.id)">Delete</button> </li>
-</ul>
-}
-}
-
-<hr>
-
-<hr>
-<!-- <ul>
-  <li>
-    <a routerLink="/login">login</a>
-    <a routerLink="/contact">contact</a>
-    <a routerLink="/about">about</a>
-  </li>
-</ul> -->

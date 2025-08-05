@@ -1,14 +1,10 @@
-<p style="font-size: 10rem;">home works!</p>
-<hr>
+<div class="content-padding">
+    <p class="heading">Home Page</p>
+ 
 
 
-<h1>dynamic routing as click on name to open userPage</h1>
-@for(x of users ; track x.id){
-            <p> <a routerLink="userPage/{{x.id}}">{{ x.name }}</a> </p>
-}
 
-
-<hr>
+ 
 
 <h1>form handling (reactive form)</h1>
     <input type="text" placeholder="email" [formControl]="email">
@@ -20,4 +16,5 @@
 
 
 
-    <hr>
+     
+</div>

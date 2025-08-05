@@ -1,12 +1,11 @@
-<h1>Template Driven Forms</h1>
+<div class="content-padding">
+    <h1>Template Driven Forms</h1>
 <form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
     <input #name = "ngModel"  required type="text" placeholder="enter name" name="name" ngModel>
     <span *ngIf= "name.invalid && name.touched">name is invalid</span>
-    <br><br>
-    <input #password = "ngModel" required type="password" placeholder="enter password" name="password" ngModel>
+     <input #password = "ngModel" required type="password" placeholder="enter password" name="password" ngModel>
     <span *ngIf= "password.invalid && password.touched">password is invalid</span>
 
-    <br><br>
     <select  #gender = "ngModel" required name="gender" ngModel>
 
         <option value="">Select Gender</option>
@@ -15,10 +14,8 @@
     </select>
     <span *ngIf= "gender.invalid && gender.touched">gender is invalid</span>
 
-    <br><br>
-    <input type="range" min="0" max="20" name="range" ngModel>
-    <br><br>
-    <button>Add User</button>
+     <input type="range" min="0" max="20" name="range" ngModel>
+     <button>Add User</button>
 
 
 
@@ -30,11 +27,14 @@
 }
 @else{
     name :----- {{userDetails?.name}}
-   <br>
+    
    password :----- {{userDetails?.password}}
-   <br>
+    
    gender : --------  {{userDetails?.gender}}
-   <br>
+    
    range : -------{{userDetails?.range}}
-   <br>
+    
 }
+
+
+</div>
