@@ -1,20 +1,32 @@
-
-
-
-import { Component, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
+import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-learning',
-  imports: [FormsModule, RouterLink, RouterOutlet, HeaderComponent],
+  imports: [FormsModule, RouterLink, RouterOutlet, HeaderComponent, NgIf , NgFor],
   templateUrl: './learning.component.html',
-  styleUrl: './learning.component.css'
+  styleUrl: './learning.component.css',
 })
-
-
 export class LearningComponent {
+  myname = 'aditya goel';
+  zz: any = '';
+  arr2 = [
+    { id: 1, name: 'aditya', age: 21 },
+    { id: 2, name: 'goel', age: 20 },
+  ];
 
+  abc(event: Event) {
+    console.log((event?.target as HTMLInputElement).value);
+    this.zz = (event?.target as HTMLInputElement).value;
+  }
+  nameFromInput: any = '';
+  clickMe() {
+    console.log('button clicked');
+
+    this.nameFromInput = this.zz;
+  }
   heading = 'new-Angular-Project';
   x: number = 0;
   name: string = ''; // Removed unnecessary space
@@ -70,9 +82,23 @@ export class LearningComponent {
 
   constructor() {
     effect(() => {
-      console.log('Signal Value:', this.signalVar());
+      console.log(
+        'Signal Valuechanging hence effect fnc is running on value changes :',
+        this.signalVar()
+      );
       // alert('signal value get changed');
     });
+  }
+
+  // need of computed signals
+  a = signal(1);
+  b = signal(2);
+  c = computed(() => this.a() + this.b());
+
+  showComputedSignals() {
+    console.log('value of c : -', this.c());
+    this.a.set(100);
+    console.log('value of c : -', this.c());
   }
 
   ArrayNames: string[] = [
@@ -97,12 +123,51 @@ export class LearningComponent {
   addTask() {
     this.TaskArr.push({ id: this.TaskArr.length + 1, task: this.taskItem });
     console.log(this.TaskArr);
-    this.taskItem=""
-
+    this.taskItem = '';
   }
-
 
   deleteTask(id: number) {
     this.TaskArr = this.TaskArr.filter((item) => item.id !== id);
   }
+
+  bgColor = 'yellow';
+  changeColor() {
+    this.bgColor = 'green';
+  }
+
+  showText = true;
+  toggleText() {
+    this.showText = !this.showText;
+  }
+
+  sampleArray = [
+  {
+    "id": 1,
+    "name": "Aditya Goel",
+    "age": 22
+  },
+  {
+    "id": 2,
+    "name": "Pari Goel",
+    "age": 20
+  },
+  {
+    "id": 3,
+    "name": "Rohan Sharma",
+    "age": 25
+  },
+  {
+    "id": 4,
+    "name": "Sneha Verma",
+    "age": 23
+  },
+  {
+    "id": 5,
+    "name": "Amit Yadav",
+    "age": 21
+  }
+]
+
+
+
 }

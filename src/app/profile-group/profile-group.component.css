@@ -48,17 +48,3 @@ button {
 button:hover {
   background: #0056b3;
 }
-
-/* Display submitted data */
-hr {
-  margin: 20px 0;
-}
-
-h1 {
-  text-align: center;
-}
-
-p {
-  font-size: 18px;
-  text-align: center;
-}

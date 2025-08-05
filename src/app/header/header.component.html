@@ -1,14 +1,11 @@
 <ul>
     <li>
-      <a routerLink="/">Home</a>
-      <a routerLink="/login">login</a>
-      <a routerLink="/contact">contact</a>
-      <a routerLink="/form">form</a>
-      <a routerLink="/template-form">template form</a>
-      <a routerLink="/about">about</a>
-      <a routerLink="/learning">learning</a>
-      <a routerLink="/profile">Profile</a>
-      <a routerLink="/parent">Parent</a> 
-      <a routerLink="**">error</a>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+      <a routerLinkActive="active" routerLink="/learning">Learning</a>
+      <a routerLinkActive="active" routerLink="/parent">Parent</a> 
+      <a routerLinkActive="active" routerLink="/template-form">Template Form</a>
+      <a routerLinkActive="active" routerLink="/form">Form</a>
+      <a routerLinkActive="active" routerLink="/routeLearning">RouteLearning</a>
+      <a routerLinkActive="active" routerLink="**">ErrorPage</a>
     </li>
   </ul>

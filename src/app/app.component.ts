@@ -1,7 +1,7 @@
 import { Component, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,19 @@ import { HeaderComponent } from "./header/header.component";
 })
 export class AppComponent {
   heading = 'new-Angular-Project';
+  myname = 'aditya goel';
+  zz: any = '';
+  abc(event: Event) {
+    console.log((event?.target as HTMLInputElement).value);
+    this.zz = (event?.target as HTMLInputElement).value;
+  }
+  nameFromInput: any = '';
+  clickMe() {
+    console.log('button clicked');
+
+    this.nameFromInput = this.zz;
+  }
+
   x: number = 0;
   name: string = ''; // Removed unnecessary space
   displayName: string = '';
@@ -92,10 +105,8 @@ export class AppComponent {
   addTask() {
     this.TaskArr.push({ id: this.TaskArr.length + 1, task: this.taskItem });
     console.log(this.TaskArr);
-    this.taskItem=""
-
+    this.taskItem = '';
   }
-
 
   deleteTask(id: number) {
     this.TaskArr = this.TaskArr.filter((item) => item.id !== id);
